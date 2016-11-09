@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="App">
+  <description>App custom PHP_CodeSniffer standards overrides.</description>
+  <!--
+    Use this ruleset to additionally customise PHPCS.
+    Do not use this standard directly with PHPCS, instead, use DCR standard
+    where this ruleset is already included.
+  -->
+</ruleset>

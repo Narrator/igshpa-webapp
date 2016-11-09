@@ -1,0 +1,18 @@
+#
+# DCR configuration file.
+#
+# Run: `dcr install` or copy manually to your project's root.
+#
+
+# Space (!) separated list of files or directories to scan.
+targets: "web/sites/all/modules/custom web/sites/all/themes/custom"
+# Comma-separated list of extensions to scan.
+extensions: "module,install,profile,php,theme,inc,test,js"
+# Comma-separated list of required standards to use.
+standards: "DCR"
+# Space-separated list of phpcs parameters to run dcr.
+parameters: "--colors"
+# Success result message.
+success: "All good! You're awesome!"
+# Fail result message.
+fail: "Please fix errors above and re-run dcr"
