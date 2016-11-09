@@ -1,6 +1,6 @@
 {
-    "name": "drupal-composer/drupal-project",
-    "description": "Project template for Drupal 8 projects with composer",
+    "name": "igshpa/webapp",
+    "description": "IGSHPA drupal webapp",
     "type": "project",
     "license": "GPL-2.0+",
     "authors": [
