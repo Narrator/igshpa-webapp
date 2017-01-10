@@ -17,3 +17,13 @@ web/sites/simpletest
 
 # Ignore node_modules
 node_modules
+
+# Ignore console logs
+console/log
+
+# Ignore local configs
+web/sites/settings.local.php
+
+Drupal.sublime-projectcompletions
+igshpa.sublime-project
+igshpa.sublime-workspace

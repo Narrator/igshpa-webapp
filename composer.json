@@ -22,7 +22,15 @@
         "drupal/core": "~8.0",
         "drush/drush": "~8.0",
         "drupal/console": "~1.0",
-        "drupal/devel": "~1.0"
+        "drupal/bootstrap": "^3.0",
+        "drupal/rules": "3.x-dev",
+        "drupal/panels": "3.x-dev",
+        "drupal/page_manager": "1.x-dev",
+        "drupal/panelizer": "3.x-dev",
+        "drupal/config_update": "^1.2",
+        "drupal/features": "^3.0",
+        "drupal/entity": "dev-1.x",
+        "drupal/devel_node_access": "^1.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -32,7 +40,9 @@
         "mikey179/vfsStream": "~1.2",
         "phpunit/phpunit": "~4.8",
         "symfony/css-selector": "~2.8",
-        "alexdesignworks/dcr": "^0.3.0"
+        "alexdesignworks/dcr": "^0.3.0",
+        "drupal/devel": "~1.0",
+        "drupal/examples": "1.x-dev"
     },
     "conflict": {
         "drupal/drupal": "*"

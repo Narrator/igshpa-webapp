@@ -1,0 +1,24 @@
+{
+  "name": "igshpa-webapp",
+  "version": "1.0.0",
+  "description": "dev-tools",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "jscs": "^3.0.7"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Narrator/igshpa-webapp.git"
+  },
+  "author": "Kaushik Subramaniam Gnanaskandan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Narrator/igshpa-webapp/issues"
+  },
+  "homepage": "https://github.com/Narrator/igshpa-webapp#readme"
+}

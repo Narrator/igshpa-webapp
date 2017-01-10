@@ -1,0 +1,11 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+function igshpa_preprocess(&$variables, $hook)
+{
+    $variables['base_path'] = base_path();
+}
