@@ -751,6 +751,7 @@ $databases['default']['default'] = array (
 );
 $settings['install_profile'] = 'standard';
 $config_directories['sync'] = 'sites/default/files/config_u_Q0-0PHt8kL6TqdM5xFnY8K9HDjAVFyLAcLXHG03N46ywh29mc2PWdBMtMfd6ZEKT0omms1GA/sync';
+$conf['allow_authorize_operations'] = FALSE;
 
 /**
  * Load local development override configuration, if available.

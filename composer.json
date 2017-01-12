@@ -29,8 +29,7 @@
         "drupal/panelizer": "3.x-dev",
         "drupal/config_update": "^1.2",
         "drupal/features": "^3.0",
-        "drupal/entity": "dev-1.x",
-        "drupal/devel_node_access": "^1.0@alpha"
+        "drupal/entity": "dev-1.x"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -47,7 +46,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "beta",
     "prefer-stable": true,
     "autoload": {
         "classmap": [
