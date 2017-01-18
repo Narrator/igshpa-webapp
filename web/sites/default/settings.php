@@ -750,7 +750,7 @@ $databases['default']['default'] = array (
   'driver' => 'pgsql',
 );
 $settings['install_profile'] = 'standard';
-$config_directories['sync'] = 'sites/default/files/config_u_Q0-0PHt8kL6TqdM5xFnY8K9HDjAVFyLAcLXHG03N46ywh29mc2PWdBMtMfd6ZEKT0omms1GA/sync';
+$config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
 $conf['allow_authorize_operations'] = FALSE;
 
 /**
