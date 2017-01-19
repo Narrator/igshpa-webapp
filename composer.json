@@ -29,7 +29,8 @@
         "drupal/panelizer": "3.x-dev",
         "drupal/config_update": "^1.2",
         "drupal/features": "^3.0",
-        "drupal/entity": "dev-1.x"
+        "drupal/entity": "dev-1.x",
+        "oomphinc/composer-installers-extender": "^1.1",
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -41,7 +42,9 @@
         "symfony/css-selector": "~2.8",
         "alexdesignworks/dcr": "^0.3.0",
         "drupal/devel": "~1.0",
-        "drupal/examples": "1.x-dev"
+        "drupal/examples": "1.x-dev",
+        "mbostock/d3": "^3.5",
+        "components/highlightjs": "^9.9"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -69,9 +72,11 @@
         ]
     },
     "extra": {
+        "installer-types": ["library", "component"],
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": ["type:drupal-library", "mbostock/d3"],
+            "web/libraries/highlight": ["components/highlightjs"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
