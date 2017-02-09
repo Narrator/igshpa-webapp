@@ -34,6 +34,7 @@ $(document).ready(function () {
 
   // Hash change for same hash handler
   $("h2.content-header").on("click", sameHashHandler);
+  $("div.content-block h3").on("click", sameHashHandler);
   $(".sidebar a").on("click", sameHashHandler);
 
   function sameHashHandler (e) {
@@ -50,19 +51,23 @@ $(document).ready(function () {
   }
   var $sidebar   = $(".sidebar"),
       top     = $sidebar.offset().top - 95,
-      bottom     = $("div.main").height() + 160;
+      bottom     = $("div.main").height();
 
   $(window).scroll(function() {
-    if ($(window).scrollTop() > top && $(window).scrollTop() < bottom) {
+    var threshold = bottom - $sidebar.height() +
+      20 + // sidebar top margin from complimentary div
+      $("div.masthead").height() +
+      51 + // navbar height
+      $("div.inner-header").height() +
+      Number($("div.inner-header").css("margin-bottom").replace(/[^-\d\.]/g, ''));
+    if ($(window).scrollTop() > top && $(window).scrollTop() < threshold) {
       $sidebar.removeClass("affix-top affix-bottom");
       $sidebar.addClass("affix");
       $sidebar.css("top", "");
-    } else if ($(window).scrollTop() >= bottom) {
+    } else if ($(window).scrollTop() >= threshold) {
       $sidebar.removeClass("affix affix-top");
       $sidebar.addClass("affix-bottom");
-      $sidebar.css("top", bottom - $sidebar.height() - 160 - 40);
-      // 160 - total height of header
-      // 40 - bottom margin of content-block
+      $sidebar.css("top", bottom - $sidebar.height());
       // 95 - .sidebar.affix top - check css
     } else {
       $sidebar.removeClass("affix affix-bottom");

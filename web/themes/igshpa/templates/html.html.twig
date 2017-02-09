@@ -57,10 +57,7 @@
 <!DOCTYPE html>
 <html {{ html_attributes }}>
   <head>
-    <!--<head-placeholder token="{{ placeholder_token|raw }}">-->
     <title>{{ head_title|safe_join(' | ') }}</title>
-    <!--<css-placeholder token="{{ placeholder_token|raw }}">
-    <js-placeholder token="{{ placeholder_token|raw }}">-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -86,7 +83,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="{{ base_path ~ directory }}/css/style.css" rel="stylesheet">
   </head>
-  <body{{ attributes.addClass(body_classes) }}>
+  <body data-spy="scroll" data-target="#sidebar" data-offset="95" {{ attributes.addClass(body_classes) }}>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
@@ -103,5 +100,8 @@
     <script src="{{ base_path ~ directory }}/js/lib/ie10-viewport-bug-workaround.js"></script>
     <script src="{{ base_path ~ directory }}/js/lib/jquery.bootstrap-autohidingnavbar.min.js"></script>
     <script src="{{ base_path ~ directory }}/js/index.js"></script>
+    {% if node_type %}
+        <script src="{{ base_path ~ directory }}/js/inner.js"></script>
+    {% endif %}
   </body>
 </html>

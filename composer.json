@@ -30,7 +30,10 @@
         "drupal/config_update": "^1.2",
         "drupal/features": "^3.0",
         "drupal/entity": "dev-1.x",
-        "oomphinc/composer-installers-extender": "^1.1"
+        "oomphinc/composer-installers-extender": "^1.1",
+        "drupal/paragraphs": "^1.0",
+        "drupal/admin_toolbar": "^1.18",
+        "paquettg/php-html-parser": "^1.7"
     },
     "require-dev": {
         "behat/mink": "~1.7",

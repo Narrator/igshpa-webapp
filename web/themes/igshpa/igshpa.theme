@@ -1,11 +1,143 @@
 <?php
+use PHPHtmlParser\Dom;
+use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph;
+
 /**
  * @file
  * Bootstrap sub-theme.
  *
  * Place your custom PHP code in this file.
  */
+class Sidebar
+{
+  public $h2;
+  public $h3;
+}
+class Header {
+  public $id;
+  public $text;
+}
+
+class ContentBlock {
+  public $heading;
+  public $heading_id;
+  public $body;
+  public $sub_content_block;
+}
+
+class SubContentBlock {
+  public $sub_heading;
+  public $sub_heading_id;
+  public $sub_body;
+}
+
 function igshpa_preprocess(&$variables, $hook)
 {
     $variables['base_path'] = base_path();
+    if (isset($variables['page_top'])) {
+      unset($variables['page_top']['toolbar']);
+    }
+    if (isset($variables['content'])) {
+      if (array_key_exists('body', $variables['content'])) {
+        $variables['inner_headers'] = $variables['content']['body'][0]['#text'];
+
+        $dom = new Dom;
+        $dom->load($variables['inner_headers']);
+
+        $divs = $dom->find('div.content-block');
+        $sidebar = array();
+        $i = 0;
+        foreach($divs as $div) {
+          $sidebarElement = new Sidebar();
+
+          if (count($div->find('h2')) > 0) {
+            $sidebarElement->h2 = new Header();
+            $sidebarElement->h2->id = $div->find('h2')[0]->getAttribute('id');
+            $sidebarElement->h2->text = $div->find('h2')[0]->text;
+            $sidebarElement->h3 = array();
+
+            $h3s = $div->find('h3');
+            $j = 0;
+            foreach($h3s as $h3) {
+              $sidebarElement->h3[$j] = new Header();
+              $sidebarElement->h3[$j]->id = $h3->getAttribute('id');
+              $sidebarElement->h3[$j]->text = $h3->text;
+              $j++;
+            }
+            $sidebar[$i] = $sidebarElement;
+            $i++;
+          }
+        }
+        $variables['sidebar'] = $sidebar;
+      }
+      if (array_key_exists('field_content_block', $variables['content'])) {
+        $content_blocks = $variables['content']['field_content_block'];
+        $paragraph_content = array();
+        $sidebar = array();
+        $k = 0;
+        foreach ($content_blocks as $key => $content_block) {
+          if (is_int($key)) {
+
+            $sidebarElement = new Sidebar();
+            $main_content = new ContentBlock();
+            $sidebarElement->h2 = new Header();
+
+            $obj = $content_block['#paragraph'];
+            $array = (array)$obj;
+            $prefix = chr(0).'*'.chr(0);
+            $paragraph = $array[$prefix.'values'];
+
+            $main_content->heading = $paragraph['field_heading']['x-default'][0]['value'];
+            $sidebarElement->h2->text = $main_content->heading;
+            $sidebarElement->h2->id = preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(' ', '-', strtolower($main_content->heading)));
+            $main_content->heading_id = $sidebarElement->h2->id;
+
+            $main_content->body = '';
+            if (isset($paragraph['field_body'])) {
+              $main_content->body =  str_replace('&nbsp;', '', $paragraph['field_body']['x-default'][0]['value']);
+              $main_content->body =  str_replace('<p>', '<p class="normal">', $main_content->body);
+            }
+            $main_content->sub_content_block = array();
+            $sidebarElement->h3 = array();
+
+            if (isset($paragraph['field_sub_content_block'])) {
+              $sub_content_array = $paragraph['field_sub_content_block']['x-default'];
+              $sub_paragraph_content = array();
+              $l = 0;
+              foreach($sub_content_array as $key => $sub_content_block) {
+                $sub_content = new SubContentBlock();
+                $sidebarElement->h3[$l] = new Header();
+
+                $sub_paragraph_id = $paragraph['field_sub_content_block']['x-default'][$l]['target_id'];
+                $obj2 = Paragraph::load($sub_paragraph_id);
+                $array2 = (array)$obj2;
+                $sub_paragraph = $array2[$prefix.'values'];
+
+                $sub_content->sub_heading = $sub_paragraph['field_sub_heading']['x-default'][0]['value'];
+                $sidebarElement->h3[$l]->text = $sub_content->sub_heading;
+                $sidebarElement->h3[$l]->id = $main_content->heading_id . '-'. preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(' ', '-', strtolower($sub_content->sub_heading)));
+
+                $sub_content->sub_heading_id = $sidebarElement->h3[$l]->id;
+
+                $sub_content->sub_body = '';
+                if (isset($sub_paragraph['field_sub_body'])) {
+                  $sub_content->sub_body = str_replace('&nbsp;', '', $sub_paragraph['field_sub_body']['x-default'][0]['value']);
+                  $sub_content->sub_body =  str_replace('<p>', '<p class="normal">', $sub_content->sub_body);
+                }
+
+                $sub_paragraph_content[$l] = $sub_content;
+                $l++;
+              }
+              $main_content->sub_content_block = $sub_paragraph_content;
+            }
+            $paragraph_content[$k] = $main_content;
+            $sidebar[$k] = $sidebarElement;
+            $k++;
+          }
+        }
+        $variables['paragraph_content'] = $paragraph_content;
+        $variables['sidebar'] = $sidebar;
+      }
+    }
 }
