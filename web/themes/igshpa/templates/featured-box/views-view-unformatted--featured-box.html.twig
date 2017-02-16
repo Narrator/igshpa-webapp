@@ -1,0 +1,16 @@
+{% for row in rows %}
+    {% if loop.index == 1 %}
+      {% set class = 'left' %}
+    {% elseif loop.index == 2 %}
+      {% set class = 'center' %}
+    {% else %}
+      {% set class = 'right' %}
+    {% endif %}
+    <div class="col-md-4 {{ class }} fluid-box">
+      <div class="wpb_wrapper">
+        <div class="king-elements ">
+          {{ row.content }}
+        </div>
+      </div>
+    </div>
+{% endfor %}

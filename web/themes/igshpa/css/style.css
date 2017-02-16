@@ -129,9 +129,13 @@ a:hover, a:focus, a:active {
 }
 .navbar-default .navbar-nav > li > .dropdown-menu {
   background-color: #426746;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
   color: #f7f7f9;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
@@ -213,7 +217,7 @@ a:hover, a:focus, a:active {
   color: #426746;
   overflow:hidden;
 }
-.carousel-inner > .item > img {
+.carousel-inner > .item > a > img {
   position: relative;
   top: 0;
   left: 0;
@@ -646,6 +650,7 @@ form.search .input-group {
   font-size:1.5em;
   font-weight:bold;
   padding-top:20px;
+  padding-bottom:10px;
 }
 
 .inner-content {
@@ -662,10 +667,29 @@ form.search .input-group {
 
 .content-block table {
   border: 1px solid #5a5a5a;
+  margin-bottom:20px;
 }
 
 .content-block table td {
   border: 1px solid #5a5a5a;
+  padding:5px;
+}
+
+.content-block table td ul {
+  text-align:left;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.content-block table th {
+  border: 1px solid #5a5a5a;
+  padding:5px;
+}
+
+.content-block img  {
+  max-width:100%;
 }
 
 .inner-content .image-block {
@@ -854,49 +878,49 @@ footer .quick-footer i.left {
   border-color: #CCCCCC;
 }
 
-.btn-all.member {
+.btn-all.yellow {
   color: #ffffff;
   background-color: #ffc14f;
   border-color: #d18f24;
 }
 
-.btn-all.member:hover,
-.btn-all.member:focus,
-.btn-all.member:active,
-.btn-all.active.member,
-.open .dropdown-toggle.btn-all.member {
+.btn-all.yellow:hover,
+.btn-all.yellow:focus,
+.btn-all.yellow:active,
+.btn-all.active.yellow,
+.open .dropdown-toggle.btn-all.yellow {
   color: #426746;
   background-color: #f1f1f1;
   border-color: #CCCCCC;
 }
 
-.btn-all.professional {
+.btn-all.blue {
   color: #ffffff;
   background-color: #4cd9c1;
   border-color: #2c9983;
 }
 
-.btn-all.professional:hover,
-.btn-all.professional:focus,
-.btn-all.professional:active,
-.btn-all.active.professional,
-.open .dropdown-toggle.btn-all.professional {
+.btn-all.blue:hover,
+.btn-all.blue:focus,
+.btn-all.blue:active,
+.btn-all.active.blue,
+.open .dropdown-toggle.btn-all.blue {
   color: #426746;
   background-color: #f1f1f1;
   border-color: #CCCCCC;
 }
 
-.btn-all.training {
+.btn-all.pink {
   color: #ffffff;
   background-color: #ff757c;
   border-color: #d14950;
 }
 
-.btn-all.training:hover,
-.btn-all.training:focus,
-.btn-all.training:active,
-.btn-all.active.training,
-.open .dropdown-toggle.btn-all.training {
+.btn-all.pink:hover,
+.btn-all.pink:focus,
+.btn-all.pink:active,
+.btn-all.active.pink,
+.open .dropdown-toggle.btn-all.pink {
   color: #426746;
   background-color: #f1f1f1;
   border-color: #CCCCCC;

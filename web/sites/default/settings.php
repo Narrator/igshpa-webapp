@@ -753,6 +753,12 @@ $settings['install_profile'] = 'standard';
 $config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
 $conf['allow_authorize_operations'] = FALSE;
 
+$settings['trusted_host_patterns'] = array(
+  'igshpa.localhost',
+  'mytest.igshpa.org',
+  'igshpa.org'
+);
+
 /**
  * Load local development override configuration, if available.
  *
@@ -763,6 +769,6 @@ $conf['allow_authorize_operations'] = FALSE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-if (file_exists(__DIR__ . '/settings.local.php')) {
+/*if (file_exists(__DIR__ . '/settings.local.php')) {
    include __DIR__ . '/settings.local.php';
-}
+}*/

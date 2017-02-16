@@ -1,0 +1,6 @@
+{% if fields.field_quick_footer_weight.content|naked_field == 1 %}
+  {% set class = 'left' %}
+{% else %}
+  {% set class = '' %}
+{% endif %}
+<a href="{{ fields.field_quick_footer_link.content|naked_field }}"><i class="fa {{ fields.field_font_awesome_icon.content|naked_field }} {{ class }}"></i></a>

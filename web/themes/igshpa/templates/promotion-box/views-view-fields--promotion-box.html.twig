@@ -1,0 +1,16 @@
+<div class="left col-md-4">
+  <div class="row">
+    <div  class="image-cropper">
+      <img src="{{ fields.uri.content|naked_field }}" alt="">
+    </div>
+  </div>
+</div>
+<div class="right col-md-8">
+  <div class="right-box">
+    <h2>{{ fields.title.content|naked_field }}</h2>
+    {{ fields.body.content }}
+    <p class="button">
+      <a href="{{ fields.uri.content|naked_field }}" class="btn btn-lg btn-all btn-default inverse">Learn More</a>
+    </p>
+  </div>
+</div>

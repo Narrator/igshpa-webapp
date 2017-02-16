@@ -1,0 +1,10 @@
+{% for row in rows %}
+  {% if loop.index == 3%}
+    {% set class = 'last' %}
+  {% else %}
+    {% set class = '' %}
+  {% endif %}
+  <div class="featurette {{ class }} col-md-4">
+    {{ row.content }}
+  </div><!-- /.col-sm-4 -->
+{% endfor %}

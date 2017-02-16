@@ -33,7 +33,10 @@
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal/paragraphs": "^1.0",
         "drupal/admin_toolbar": "^1.18",
-        "paquettg/php-html-parser": "^1.7"
+        "paquettg/php-html-parser": "^1.7",
+        "drupal/pathauto": "1.x-dev",
+        "drupal/menu_link_attributes": "1.x-dev",
+        "burdapraha/drupal_twig_food": "dev-master"
     },
     "require-dev": {
         "behat/mink": "~1.7",

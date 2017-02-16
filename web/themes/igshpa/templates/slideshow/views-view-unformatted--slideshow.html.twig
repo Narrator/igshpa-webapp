@@ -1,0 +1,9 @@
+{% for row in rows %}
+  {% if loop.index == 1 %}
+  <div class="item active">
+  {% else %}
+  <div class="item">
+  {% endif %}
+    {{ row.content }}
+  </div>
+{% endfor %}

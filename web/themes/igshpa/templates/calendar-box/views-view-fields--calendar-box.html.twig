@@ -1,0 +1,6 @@
+<img src="{{ fields.uri.content|naked_field }}" alt="" />
+<span>
+  <a href="{{ fields.field_calendar_link.content|naked_field }}">{{ fields.field_calendar_date.content|naked_field|date('M') }}<strong>{{ fields.field_calendar_date.content|naked_field|date('d')}}</strong> {{ fields.field_calendar_date.content|naked_field|date('Y') }}</a></span>
+<h4 class="text-center">{{ fields.title.content|naked_field }}</h4>
+{{ fields.body.content }}
+<p class="text-center"><a href="{{ fields.field_calendar_link.content|naked_field }}" class="btn btn-lg btn-all btn-default inverse"><i class="fa fa-calendar" aria-hidden="true"></i> Enroll</a></p>
