@@ -147,4 +147,14 @@ $(document).ready(function () {
     }
   });
   $('a.external').append(' <i class="fa fa-external-link" aria-hidden="true"></i>');
+  $( "span.l-responsive" ).parent().addClass( "l-responsive" );
+  $( "span.xl-responsive" ).parent().addClass( "xl-responsive" );
+  $( "span.m-unresponsive" ).parent().addClass( "m-unresponsive" );
+  $( "span.m-responsive" ).parent().addClass( "m-responsive" );
+
+  $( "a.l-responsive" ).parent().addClass( "l-responsive" );
+  $( "a.xl-responsive" ).parent().addClass( "xl-responsive" );
+  $( "a.m-unresponsive" ).parent().addClass( "m-unresponsive" );
+  $( "a.m-responsive" ).parent().addClass( "m-responsive" );
+
 });

@@ -936,9 +936,9 @@ footer .quick-footer i.left {
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
-li.l-responsive {
-  display:none;
-}
+ li.l-responsive {
+    display:none;
+  }
 
 p.l-responsive {
   display:none;
@@ -960,7 +960,7 @@ li.m-responsive {
     width:100%;
   }
 
-  li.l-responsive {
+ li.l-responsive {
     display:block;
   }
   p.l-responsive {
@@ -1371,4 +1371,15 @@ li.m-responsive {
     .sidebar.affix-bottom {
         width: 263px
     }*/
+}
+
+span.unresponsive {
+  display: block;
+  height: 0px;
+}
+
+span[data-drupal-link-system-path^="<front>"] {
+  display: block;
+  height: 0px;
+  font-size: 0px;
 }
